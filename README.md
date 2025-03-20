@@ -1,18 +1,108 @@
-This is a simple Ethereum web wallet built with Node and React JS. This wallet is for learning purpose, do not use it in production or not use it with your real Ethereum account.
+# Ethereum Test Wallet
 
-The wallet connects to Ropsten test network via [Infura](https://infura.io/) and use [Etherscan](https://etherscan.io/) for getting balance and transactions, so you need to register on these services to get API keys.
+A simple Ethereum web wallet built with Node.js and React for educational purposes. This project demonstrates the fundamentals of blockchain wallet functionality in a clean, interactive interface.
 
-1. Clone the repo.
+> **⚠️ IMPORTANT**: This wallet is for learning purposes only. Do not use it in production environments or with real Ethereum accounts containing actual funds.
 
-2. Run `npm install`.
+## Features
 
-3. Copy `.env.sample` to `.env` and edit the environment variables to your values.
+- Connect to the Ethereum Ropsten test network
+- Generate and manage Ethereum test accounts
+- View account balances and transaction history
+- Send and receive test Ether
+- Monitor real-time updates of your wallet activity
 
- * `ETHERSCAN_API_KEY`: your Etherscan API key
- * `INFURA_API_KEY`: your Infura API key
- * `REACT_APP_BACKEND_HOST`: domain or IP of server side app, for example http://localhost
- * `REACT_APP_BACKEND_PORT`: port of server side app, for example 3001
- * `PORT`: port of client side app, for example 3002
- * `REACT_APP_UPDATE_INTERVAL`: how often client side app updates balance and transactions
+## Prerequisites
 
-4. Start the server app with `node server.js`, run the client app with `yarn start`.
+Before you begin, you'll need:
+
+- [Node.js](https://nodejs.org/) (v14+ recommended)
+- npm or yarn package manager
+- Free API keys from:
+  - [Infura](https://infura.io/) - For Ethereum network connectivity
+  - [Etherscan](https://etherscan.io/) - For fetching balance and transaction data
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/ethereum-test-wallet.git
+   cd ethereum-test-wallet
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+   or with yarn:
+   ```bash
+   yarn install
+   ```
+
+3. Configure environment variables:
+   ```bash
+   cp .env.sample .env
+   ```
+
+4. Open the `.env` file and set the following variables:
+
+   | Variable | Description | Example |
+   |----------|-------------|---------|
+   | `ETHERSCAN_API_KEY` | Your Etherscan API key | abc123... |
+   | `INFURA_API_KEY` | Your Infura API key | xyz789... |
+   | `REACT_APP_BACKEND_HOST` | Domain or IP of server side app | http://localhost |
+   | `REACT_APP_BACKEND_PORT` | Port of server side app | 3001 |
+   | `PORT` | Port of client side app | 3002 |
+   | `REACT_APP_UPDATE_INTERVAL` | Refresh interval (ms) for balance/transactions | 15000 |
+
+## Running the Application
+
+1. Start the server:
+   ```bash
+   node server.js
+   ```
+
+2. In a new terminal window, start the client:
+   ```bash
+   npm start
+   ```
+   or with yarn:
+   ```bash
+   yarn start
+   ```
+
+3. Access the wallet in your browser at `http://localhost:3002`
+
+## Getting Test Ether
+
+To experiment with the wallet, you'll need test Ether. You can obtain it for free from:
+- [Ropsten Faucet](https://faucet.ropsten.be/)
+- [Ropsten Testnet Faucet](https://faucet.dimensions.network/)
+
+## Project Structure
+
+```
+ethereum-test-wallet/
+├── server.js          # Backend Node.js server
+├── src/
+│   ├── App.js         # Main React component
+│   ├── components/    # React UI components
+│   ├── services/      # API and blockchain services
+│   └── utils/         # Helper functions
+├── public/            # Static assets
+└── .env               # Environment configuration
+```
+
+## Security Notes
+
+- This application is not audited for security
+- Private keys are stored in browser localStorage (not secure for production)
+- No encryption is implemented for sensitive data
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
